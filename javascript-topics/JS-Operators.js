@@ -147,6 +147,6 @@ let person = {
 };
 
 delete person.age;
-
+   
 console.log(person);
 
