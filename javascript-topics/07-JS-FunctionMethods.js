@@ -1,4 +1,5 @@
 // Function Methods + this In JavaScript
+// Topics covered : this , call , apply , bind , toString , Callback Functions
 // _______________________________________________
 
 // What is this ?
@@ -270,8 +271,8 @@ let user3 = {
     name : "Ashmeet",
     greet
 };
-let x = user3.greet; // Correct code to get "Ashmeet" --->  let x = user3.greet.bind(user3) OR greet.bind(user3) Both are correct bcs user3.greet = greet()
-x(); // output = Undefines 
+let x = user3.greet; // Correct code to get "Ashmeet" --->  let x = user3.greet.bind(user3) OR greet.bind(user3) Both are correct bcs user3.greet = greet;
+x(); // output = Undefined
 user3.greet(); // Ashmeet
 greet.call(user3); // Ashmeet
 
@@ -287,9 +288,7 @@ greet.call(user3); // Ashmeet
 // Normal Function
 
 /* function greet(){
-
     console.log("Hello");
-
 }
 
 greet(); */
@@ -298,23 +297,16 @@ greet(); */
 /*
 Hello
 */
-
 // --------------------------------------
 
 // Callback Function
 
 /* function greet(fun){
-
     fun();
-
 }
-
 function hello(){
-
     console.log("Hello");
-
 }
-
 greet(hello); */
 
 // Output
@@ -325,21 +317,14 @@ Hello
 // Explanation
 
 /*
-
 greet(hello)
-
 ↓
-
 hello passed into greet
-
 ↓
-
+then
 fun()
-
-↓
-
+becomes
 hello()
-
 */
 
 // --------------------------------------
@@ -347,17 +332,11 @@ hello()
 // Callback with Parameters
 
 /* function calculate(a,b,operation){
-
     operation(a,b);
-
 }
-
 function add(x,y){
-
     console.log(x+y);
-
 }
-
 calculate(
     10,
     20,
@@ -374,15 +353,10 @@ calculate(
 // Callback using Arrow Function
 
 /* function run(fun){
-
     fun();
-
 }
-
 run(()=>{
-
     console.log("Running");
-
 }); */
 
 // Output
@@ -393,11 +367,8 @@ Running
 // --------------------------------------
 
 // Real Use Example
-
 /* setTimeout(function(){
-
     console.log("Executed");
-
 },3000); */
 
 // Output after 3 sec
@@ -406,7 +377,6 @@ Executed
 */
 
 // Explanation
-
 // --------------------------------------
 
 // Why Callback ?
@@ -419,30 +389,14 @@ Reusable code
 // Difference
 /*
 
-greet()
-↓
-Run function
-
-greet(hello)
+greet(hello) Output : [function hello]
 ↓
 Pass function
 
-greet(hello())
+AND
+
+greet(hello()) Output : code will run inside hello function
 ↓
 Run then pass
-
-*/
-
-// --------------------------------------
-
-// Important
-
-/*
-hello
-→ Function
-
-
-hello()
-→ Function execution
 
 */
