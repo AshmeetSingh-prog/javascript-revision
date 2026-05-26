@@ -1,4 +1,6 @@
 // Objects In JS
+// this file covers all important concepts related to objects in JavaScript, including object creation, property access, methods, and built-in object functions.
+
 // Object = Collection of key : value pairs
 
 // 3 Ways To Create Objects In JS
