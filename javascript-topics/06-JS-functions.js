@@ -90,6 +90,9 @@ console.log(square(5)); */
 25
 */
 
+/* ()=> expression     // auto return
+()=> { statements } // return manually */
+
 // --------------------------------------
 
 // Default Parameters

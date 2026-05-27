@@ -131,6 +131,7 @@ console.log(arr10.join("-"))
 // Define
 // Copies Part Of Array
 // Original Array Not Changed
+//slice(start,end)
 // Special
 // Negative Index Allowed
 // Example
@@ -157,6 +158,79 @@ console.log(arr12)
 // [10,100,30]
 
 //----------------------------------------------------
+// ARRAY CALLBACK PARAMETERS ⭐⭐⭐
+// Define
+// Many Array Methods Accept A Function
+// JS Automatically Sends Values To That Function
+// Parameters Are Optional
+// Order Matters
+
+// 13. Callback Parameters
+// Syntax
+array.method((value,index,array)=>{})
+// value → Current Element
+// index → Position Of Current Element
+// array → Entire Original Array
+// Example 1
+let numbers = [10, 20, 30]
+numbers.forEach((value,index,array)=>{console.log(value)
+console.log(index)
+console.log(array)})
+// Output
+// 10
+// 0
+// [10,20,30]
+
+// 20
+// 1
+// [10,20,30]
+
+// 30
+// 2
+// [10,20,30]
+
+// 13) 1.Using Only value
+// Example
+let scores =[1,2,3]
+let doubled =scores.map((value)=>value*2)
+console.log(doubled)
+// Output
+// [2,4,6]
+
+// 13) 2. Using value + index
+// Example
+let levels =[10,20,30]
+let result =levels.map((value,index)=>value+index)
+console.log(result)
+// Output
+// [10,21,32]
+
+// 14) 3. Using value + index + array
+// Example
+let prices =[100,200,300]
+prices.forEach((value,index,array)=>{console.log(value,index,array.length)})
+// Output
+// 100 0 3
+// 200 1 3
+// 300 2 3
+
+// 13) 4.reduce() Callback ⭐⭐⭐
+// Define
+// reduce Uses Different Parameters
+// acc Stores Previous Result
+// Syntax
+array.reduce((acc,value,index,array)=>{},initialValue)
+// acc → Previous Result
+// value → Current Element
+// index → Current Index
+// array → Entire Array
+
+// Example
+let bills =[10,20,30]
+let total =bills.reduce((acc,value)=>acc+value,0)
+console.log(total)
+// Output
+// 60
 
 // ARRAY METHODS IN JS (PART 2)
 
