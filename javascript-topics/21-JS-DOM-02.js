@@ -105,6 +105,33 @@ parent.appendChild(span);
 // Output:
 // Span added at end
 
+// .after() Method in JavaScript
+// =========================
+// Definition:
+// Inserts one or more nodes AFTER a specified element.
+// Syntax:
+// element.after(node1, node2, ...);
+
+// Example 1: Insert Element
+const para = document.getElementById("para");
+const heading = document.createElement("h2");
+heading.textContent = "New Heading";
+para.after(heading);
+
+/*
+Before:
+<p id="para">Hello</p>
+
+After:
+<p id="para">Hello</p>
+<h2>New Heading</h2>
+*/
+// 1. Inserts content AFTER the element.
+// 2. Does not insert inside the element.
+// 3. Can insert elements and text.
+// 4. Modern and shorter alternative to:
+//    insertAdjacentElement("afterend", node)
+
 // =========================================
 // Revision Notes
 
