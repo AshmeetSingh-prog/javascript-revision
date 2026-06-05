@@ -1,0 +1,85 @@
+*{
+      margin: 0;
+      padding: 0;
+       box-sizing: border-box;
+}
+body{
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+#comscr{
+      height: 80vh;
+      width: 40vw;
+      background-color: aqua;
+      border: 5px solid black;
+      border-radius: 10px;
+}
+#head{
+      height:10%;
+      width: 100%;
+      align-self: first baseline;
+      background-color: bisque;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+#PokeLogo{
+      height: 100%;
+      width: 37%;
+}
+#pokeCont{
+      height: 90%;
+      width: 100%;
+}
+#nav{
+      height: 8%;
+      width: 100%;
+      border: 2px solid black;
+      background-color: burlywood;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+}
+#Pokeser{
+      height: 90%;
+      width: 50%;
+}
+#Pokebut{
+      height: 90%;
+      width: 15%;
+}
+#imgSec{
+      height: 50%;
+      width: 100%;
+      background-color: khaki;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+#img{
+      height: 90%;
+      width: 50%;
+      background-color: blueviolet;
+}
+#infoSec{
+      height: 40%;
+      padding-left: 2%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-size: 1.2rem;
+}
+
+@media (max-width: 767px) {
+      #PokeLogo{
+            width: 77%;
+      }
+      #comscr{
+            height: 100%;
+            width: 100%;
+            border: none;
+      }
+}
