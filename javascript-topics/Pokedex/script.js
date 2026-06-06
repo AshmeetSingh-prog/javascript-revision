@@ -62,3 +62,31 @@ const showErr = ()=>{
 function showDefault(){
       loadPokemon()
 }
+showDefault()
+document.getElementById('Pokebut').addEventListener('click',()=>{
+      loadPokemon()
+})
+document.getElementById('Pokeser').addEventListener('keydown',(event)=>{
+      if(event.key == "Enter"){
+            loadPokemon()
+      }
+})
+document.getElementById("next").addEventListener('click', async ()=>{
+      currentID ++
+      const data = await getPokeData(currentID)
+      if (data){
+            changeImage(data)
+            changInfo(data)
+      }
+})
+document.getElementById("prev").addEventListener('click', async ()=>{
+      currentID --
+      if (currentID <= 0 ){
+            currentID ++
+      }
+      const data = await getPokeData(currentID)
+      if (data){
+            changeImage(data)
+            changInfo(data)
+      }
+})
