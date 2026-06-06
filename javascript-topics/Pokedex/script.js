@@ -1,4 +1,4 @@
-
+let currentID = 0
 async function getPokeData(name){
       try{
             const api = `https://pokeapi.co/api/v2/pokemon/${name}`
@@ -36,14 +36,14 @@ function changeImage(data){
 }
 function changInfo(data) {
       const name = data['name']
-      const id = data['id']
+      currentID = data['id']
       const height = data['height']
       const weight = data['weight']
       const type = data['types'][0]['type']['name']
       const ability = data['abilities'][0]['ability']['name'] 
       // getting html elements
       const infoSec = document.getElementById("infoSec");
-      const infoArr = [name,id,type,height,weight,ability]
+      const infoArr = [name,currentID,type,height,weight,ability]
       const spans = infoSec.querySelectorAll("span");
       for (let i = 0; i < spans.length; i++) {
             spans[i].textContent = infoArr[i]            
@@ -62,12 +62,3 @@ const showErr = ()=>{
 function showDefault(){
       loadPokemon()
 }
-showDefault()
-document.getElementById('Pokebut').addEventListener('click',()=>{
-      loadPokemon()
-})
-document.getElementById('Pokeser').addEventListener('keydown',(event)=>{
-      if(event.key == "Enter"){
-            loadPokemon()
-      }
-})
