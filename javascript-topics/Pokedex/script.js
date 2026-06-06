@@ -4,24 +4,37 @@ async function getPokeData(name){
             const api = `https://pokeapi.co/api/v2/pokemon/${name}`
             const response = await fetch(api)
             const data = await response.json()
+            if(!response.ok){
+                  throw new Error("Pokemon not found")
+            }
             return data
       }
       catch(Error){
-            console.log(Error);            
+            console.log(Error);   
+            return null         
       }
 };
-const loadPokemon = async (name) => {
-      const data = await getPokeData(name)
-      changeImage(data)
-      changInfo(data)
+const loadPokemon = async () => {
+      const inpbox = document.getElementById("Pokeser")
+      const inp = inpbox.value.toLowerCase().trim()
+      inpbox.value = ""
+      const data = await getPokeData(inp)
+      if(data){
+            changeImage(data)
+            changInfo(data)
+      }
+      else{  
+            showErr()          
+      }
+      
 }
-async function changeImage(data){
+function changeImage(data){
       const url = data['sprites']['other']['official-artwork']['front_default']
       let img = document.getElementById("img")
       img.src = url
       console.log(url)
 }
-async function changInfo(data) {
+function changInfo(data) {
       const name = data['name']
       const id = data['id']
       const height = data['height']
@@ -37,21 +50,24 @@ async function changInfo(data) {
       }
       console.log(spans)
 }
-loadPokemon("lucario")
-
-
-
-
-
-
-
-
-
-/* async function loadPokemon(name){
-      const data = await getPokeData(name);
-
-      changeImage(data);
-      changeHeight(data);
-      changeWeight(data);
-      changeName(data);
-} */
+const showErr = ()=>{
+      let errDiv = document.getElementById("err")
+      errDiv.classList.add("errL")
+      errDiv.textContent = "Enter valid pokemon name"
+      setTimeout(()=>{
+            errDiv.textContent = ""
+            errDiv.classList.remove("errL")
+      },4000)
+}
+function showDefault(){
+      loadPokemon()
+}
+showDefault()
+document.getElementById('Pokebut').addEventListener('click',()=>{
+      loadPokemon()
+})
+document.getElementById('Pokeser').addEventListener('keydown',(event)=>{
+      if(event.key == "Enter"){
+            loadPokemon()
+      }
+})

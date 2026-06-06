@@ -142,6 +142,7 @@ After:
 // nextElementSibling    -> Next element
 // previousElementSibling-> Previous element
 
+// after() -> Inserts one or more nodes AFTER a specified element
 // createElement() -> Create new element
 // append()        -> Add at end
 // prepend()       -> Add at beginning

@@ -16,6 +16,7 @@ body{
       background-color: aqua;
       border: 5px solid black;
       border-radius: 10px;
+      position: relative;
 }
 #head{
       height:10%;
@@ -56,13 +57,25 @@ body{
       width: 100%;
       background-color: khaki;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
 }
 #img{
       height: 90%;
       width: 50%;
       background-color: blueviolet;
+}
+.move{
+      height: 10%;
+      width: 10%;
+      background-color: cadetblue;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.2rem;
+      border: 2px solid red;
+      border-radius: 2px;
 }
 #infoSec{
       height: 40%;
@@ -71,6 +84,16 @@ body{
       flex-direction: column;
       justify-content: space-around;
       font-size: 1.2rem;
+}
+.errL{
+      position: absolute;
+      z-index: 2;
+      top: 20%;
+      left: 20%;
+      background-color: aliceblue;
+      border: 2px solid red;
+      border-radius: 5px;
+
 }
 
 @media (max-width: 767px) {

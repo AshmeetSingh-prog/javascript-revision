@@ -8,6 +8,7 @@
 </head>
 <body>
       <div id="comscr">
+            <div data-purpose="Shows Error when user inputs invalid pokemon" id="err" class=""></div>
             <header id="head">
                   <img src="PokedexLogo.jpg" alt="" id="PokeLogo">
             </header>
@@ -17,7 +18,13 @@
                         <button type="button" id="Pokebut">Search</button>
                   </div>
                   <div id="imgSec">
+                        <div class="move">
+                              <span id="prev"> < </span>
+                        </div>
                         <img src="" alt="" id="img">
+                        <div class="move" id="next">
+                              <span id="next"> > </span>
+                        </div>
                   </div>
                   <div id="infoSec">
                         <div class="infotext">Name : <span id="infName"></span></div>
